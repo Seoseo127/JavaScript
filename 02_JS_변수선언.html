@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS 변수선언</title>
+<script>
+    /*변수선언
+    변수선언 키워드(명령어) : var, let, const
+    - var : 변수 사용범위 function 기준(레벨)
+    - let, const : 변수 사용범위 중괄호({}) 기준
+    - const : 상수화된 변수 - 값 설정 후 변경 불가
+    변수명 사용 문자 :영문대소문자, 숫자,_,$
+    기본자료형 : 문자열(string), 숫자(number),블린 (boolean), undefined(값할당안됨),
+      null(명시적 값없음), Symbol(고유한 식별자), BigInt(접미어 n사용)
+    참조형 object 타입 : String, Number, Boolean, Array, Math, Date, Set, Map, ...
+    */
+    var str = "안녕하세요(문자열)";
+    var num = 100;
+    var bool = true;
+    var undef; //선언만 하고 값 할당 안하면 undefined
+    var vNull = null;
+    
+    document.write("문자열 출력: " + str, "<br>");
+    document.write("숫자열 출력: " + num, "<br>");
+    document.write("bool 출력: " + bool, "<br>");
+    document.write("undef 출력: " + undef, "<br>");//undefined
+    document.write("vNull 출력: " + vNull, "<br>");
+    document.write("<hr>");
+    
+    //변수에 저장 타입 확인 : typeof
+    document.write("typrof str = " + typeof str, "<br>");
+    document.write("typrof num = " + typeof num, "<br>");
+    document.write("typrof bool = " + typeof bool, "<br>");
+    document.write("typrof undef = " + typeof undef, "<br>"); //undefined
+    document.write("typrof vNull = " + typeof vNull, "<br>");
+    document.write("<br>");
+    
+    //--------------------------
+    //변수에 고정된 타입의 개념이 없음
+    str = 500;
+    document.write("str: " + str + ", typrof str = " + typeof str, "<br>");
+    
+    str = true;
+    document.write("str: " + str + ", typrof str = " + typeof str, "<br>");
+    
+    var sum = num + str; // 100 + true ---> 101 : true 값은 1 로 변경되어 덧셈처리
+    document.write("sum 결과(100 + true) : " + sum, "<br>");
+    
+    sum = 100 + false; //false 값은 0 으로 변경되어 덧셈처리
+    document.write("sum 결과(100 + false) : " + sum, "<br>");
+    document.write("<hr>");
+ 
+    //-----------------------------
+    // var 변수 사용시 주의
+    // var 변수선어문 : 변수 중복 선언이 허용됨
+    var sum = 0; //변수 중복선언 및 사용가능(var 변수)
+    sum = sum + 10;
+    document.write("sum : " + sum, "<br>");
+    
+    //-----------------------
+    // NaN(Not a Number) : 숫자가 아님 - 연산결과가 숫자가 아닌 경우
+    document.write("num + undef : " + (num + undef), "<br>"); //연산결과: NaN
+    document.write("num * 'A' : " + (num * 'A'), "<br>"); //연산결과: NaN
+    document.write("'BBB' * 'A' : " + ('BBB' * 'A'), "<br>"); //연산결과: NaN
+    
+</script>
+    
+    
+</head>
+<body>
+    <h1>자바스크립트 변수선언 알아보기</h1>
+    
+</body>
+</html>
+
+
+
+
+
+
+
