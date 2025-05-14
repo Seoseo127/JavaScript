@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+<script>
+    // object : 객체 사용법
+    // 객체 선언 및 사용법
+    //-----------------------
+    const tv = new Object();
+    document.write("typeof tv : " + typeof tv, "<br>");
+    tv.width = 1500; // tv 객체에 width 속성 추가되고 값 설정
+    tv.height = 700;
+    tv.color = "black";
+    tv.on = function(){
+        console.log("TV전원 ON");
+        document.write("TV전원 ON", "<br>");
+    };
+    tv.off = function(){
+        console.log("TV전원 OFF---");
+        document.write("TV전원 OFF---", "<br>");
+    };
+    
+    //객체 속성값 확인
+    document.write("tv.width : " + tv.width, "<br>");
+    document.write("tv.height : " + tv.height, "<br>");
+    document.write("tv.color : " + tv.color, "<br>");
+    //객체 기능 확인
+    tv.on(); //함수 호출
+    tv.off();
+    document.write("<hr>");
+    
+    //-------------------
+    // 속성 유무 확인 : 속성명 in 객체
+    document.write("tv에 color 속성 유무 : " + ("color" in tv), "<br>");
+    document.write("tv에 weight 속성 유무 : " + ("weight" in tv), "<br>");
+    
+    // 속성 삭제 : delete 객체.속성명
+    delete tv.color;
+    document.write("color 삭제후 속성 유무 : " + ("color" in tv), "<br>");
+    
+    //속성 추가 또는 값 변경
+    tv.color = "gray"; // 없으면 추가
+    document.write("tv.color : " + tv.color, "<br>");
+    
+    tv.color = "yellow"; //있으면 수정(변경)
+    document.write("tv.color : " + tv.color, "<br>");
+    
+    tv["color"] = "orange";
+    document.write("tv['color'] : " + tv["color"], "<br>");
+    document.write("<hr>");
+    
+    //---------------------------
+    // 객체의 속성 확인(for ~ in)
+    for (let prop in tv) {
+        document.write("tv 속성명확인 - " + prop + ": " + tv[prop], "<br>");
+    }
+    document.write("<hr>");
+    
+    //================================
+    // 객체 선언 및 생성방식2
+    // { 속성명1 : 값1, 속성명2 : 값2, ..., 속성명n : 값n }
+    const tv2 = {
+        width : 1100,
+        height : 710,
+        color : "검정",
+        on : function(){
+            document.write("<p>전원켜짐!!!</p>");
+        },
+        off : function(){
+            document.write("<p>전원 OFF~~~</p>");
+        },
+        size : function(){
+            document.write("<p>크기: " + this.width + " x " + this.height + "</p>");
+        }
+    };
+    document.write("tv2 : " + tv2, "<br>");
+    document.write("tv2.width : " + tv2.width, "<br>");
+    document.write("tv2.height : " + tv2.height, "<br>");
+    document.write("tv2.color : " + tv2.color, "<br>");
+    tv2.on();
+    tv2.off();
+    tv2.size();
+    
+    //==========================
+    //생성자 사용방식
+    function TV(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.on = function(){
+            document.write("<p>전원켜짐!!!</p>");
+        };
+        this.off = function(){
+            document.write("<p>전원 OFF~~~</p>");
+        };
+    }
+    
+    document.write("<h3>===== JavaScript 끝 ==========</h3>");
+</script>    
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
